@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: "Manual"
+    url: /_docs/manual/
+  - title: "HowTo"
+    url: /_docs/howto/
+  - title: "Maintenance"
+    url: /_docs/maintenance/
+  - title: "Referenzen"
+    url: /_docs/referenzen/
