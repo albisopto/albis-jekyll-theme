@@ -8,15 +8,34 @@ layout: default
   {% include page__hero_video.html %}
 {% endif %}
 
+
 <div id="main" role="main">
+
   <article class="splash" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date: "%B %d, %Y" }}">{% endif %}
 
-    <section class="page__content" itemprop="text">
+    <div class="albis-docinfo">
+      <h3>Document Information</h3>
+      <table style="width: 30%">
+        <tr><td>Type:</td> <td>{{site.doc_category}}</td></tr>
+        <tr><td>Document:</td> <td>{{site.doc_id}}</td></tr>
+        <tr><td>Revision:</td> <td>{{site.doc_revision}}</td></tr>
+        <tr><td>Owner:</td> <td>{{site.doc_owner}}</td></tr>
+        <tr><td>Classification:</td> <td>{{site.doc_classification}}</td></tr>
+        <tr><td>Last Updated:</td> <td>{{site.doc_update}}</td></tr>
+      </table>
+    </div>
+
+    <div class="albis-docdisclaimer">
+      <p>This document is a controlled document. It is automatically generated from its source repository and represents
+         the most recent version when viewed through a browser within the Albis local area network</p>
+    </div>
+
+    <!-- <section class="page__content" itemprop="text">
       {{ content }}
-    </section>
+    </section> -->
   </article>
 </div>
